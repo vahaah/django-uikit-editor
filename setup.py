@@ -12,7 +12,7 @@ setup(
     license="Simplified BSD",
     url='https://github.com/smidth/django-uikit-editor',
 
-    packages=['djace_editor'],
+    packages=['uikit_editor'],
     include_package_data=True,
     install_requires=['Django', 'setuptools'],
 
