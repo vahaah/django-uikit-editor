@@ -7,29 +7,26 @@
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="kotlin.js"></script>
-<style type="text/css">.CodeMirror {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}</style>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-    <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
-    <ul>
-        <li><a href="../../index.html">Home</a>
-        <li><a href="../../doc/manual.html">Manual</a>
-        <li><a href="https://github.com/codemirror/codemirror">Code</a>
-    </ul>
-    <ul>
-        <li><a href="../index.html">Language modes</a>
-        <li><a class=active href="#">Kotlin</a>
-    </ul>
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Kotlin</a>
+  </ul>
 </div>
 
 <article>
-    <h2>Kotlin mode</h2>
+<h2>Kotlin mode</h2>
 
 
-    <div><textarea id="code" name="code">
+<div><textarea id="code" name="code">
 package org.wasabi.http
 
 import java.util.concurrent.Executors
@@ -57,17 +54,17 @@ public class HttpServer(private val appServer: AppServer) {
         bootstrap.group(primaryGroup, workerGroup)
         bootstrap.channel(javaClass<NioServerSocketChannel>())
         bootstrap.childHandler(NettyPipelineInitializer(appServer))
-        }
+    }
 
-        public fun start(wait: Boolean = true) {
+    public fun start(wait: Boolean = true) {
         val channel = bootstrap.bind(appServer.configuration.port)?.sync()?.channel()
 
         if (wait) {
-        channel?.closeFuture()?.sync()
+            channel?.closeFuture()?.sync()
         }
-        }
+    }
 
-        public fun stop() {
+    public fun stop() {
         // Shutdown all event loops
         primaryGroup.shutdownGracefully()
         workerGroup.shutdownGracefully()
@@ -75,8 +72,8 @@ public class HttpServer(private val appServer: AppServer) {
         // Wait till all threads are terminated
         primaryGroup.terminationFuture().sync()
         workerGroup.terminationFuture().sync()
-        }
-        }
+    }
+}
 </textarea></div>
 
     <script>
@@ -87,8 +84,6 @@ public class HttpServer(private val appServer: AppServer) {
         });
     </script>
     <h3>Mode for Kotlin (http://kotlin.jetbrains.org/)</h3>
-
     <p>Developed by Hadi Hariri (https://github.com/hhariri).</p>
-
     <p><strong>MIME type defined:</strong> <code>text/x-kotlin</code>.</p>
 </article>
