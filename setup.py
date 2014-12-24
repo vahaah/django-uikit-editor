@@ -2,7 +2,7 @@
 from setuptools import setup
 
 setup(
-    name='uikit_editor',
+    name='django-uikit-editor',
     version='0.0.1',
     description='uikit_editor provides integration for UiKit htmleditor with Django',
     long_description=open('README.rst').read(),

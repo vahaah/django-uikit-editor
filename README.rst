@@ -17,7 +17,7 @@ Getting started
 
 - Install *uikit_editor*:
 
-```pip install uikit_editor```
+```pip install django-uikit-editor```
 
 - Add `'uikit_editor'` to INSTALLED_APPS.
 
